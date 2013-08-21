@@ -717,8 +717,7 @@ function createTask(options) {
 
 				if(obj.input.argv.length === 5 || i === (files.length - 1)) {
 
-					//stream.write(obj);
-					console.log(obj);
+					stream.write(obj);
 
 					sent++;
 
