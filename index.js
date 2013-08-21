@@ -713,7 +713,7 @@ function createTask(options) {
 				content = LZString.compressToBase64(content);
 
 				obj.input.argv.push({arg:name, pos:obj.input.argv.length});
-				obj.input.files.push({name:name, content:content});
+				obj.input.files.push({name:name, content:content, decompress:true});
 
 				if(obj.input.argv.length === 5 || i === (files.length - 1)) {
 
