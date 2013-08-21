@@ -687,6 +687,8 @@ function createTask(options) {
       taskId: task._id
     });
 
+    console.log("TaskID: ", task._id);
+
     //Catch faults or errors emited by CrowdProcess
     stream.on('error', error);
     stream.on('fault', error);
