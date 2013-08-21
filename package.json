@@ -1,0 +1,19 @@
+{
+  "name": "crp-video-resize",
+  "version": "0.0.1",
+  "description": "Using the power of CrowdProcess to resize a video",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stigdreyer/crp-video-resize.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stig Dreyer",
+  "dependencies": {
+    "crp-task-producer-client": "*",
+    "crp-task-client": "*",
+    "crp-auth-client": "*"
+  }
+}
