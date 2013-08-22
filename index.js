@@ -659,7 +659,7 @@ AuthClient.login('email', 'password', function(err, credential) {
 	//Options for creating task and dataunit stream
   	var options = {
 	   bid: 1,
-	   program: fs.readFileSync('./lib/program.min.js', 'utf8'), //Reads source code for Run(data) function from file
+	   program: fs.readFileSync('./lib/program.js', 'utf8'), //Reads source code for Run(data) function from file
 	   credential: credential
 	};
 
@@ -708,6 +708,9 @@ function createTask(options) {
 			for(var i = 0; i < files.length; i++) {
 
 				var name = files[i];
+
+        if(name.indexOf(".jpg") < 0) continue;
+
 				var content = fs.readFileSync("./img/" + name, 'binary');
 
 				content = LZString.compressToBase64(content);
