@@ -6,7 +6,7 @@ var TaskProducerClient = require('crp-task-producer-client');
 
 var fs = require('fs');
 var plucker = require('png-plucker');
-var spawn = require('child-process').spawn,
+var spawn = require('child_process').spawn;
 
 //Authentication using your CrowdProcess login information
 AuthClient.login('email', 'password', function(err, credential) {
@@ -15,7 +15,7 @@ AuthClient.login('email', 'password', function(err, credential) {
 	//Options for creating task and dataunit stream
   	var options = {
 	   bid: 1,
-	   program: fs.readFileSync('./lib/program.min.js', 'utf8'), //Reads source code for Run(data) function from file
+	   program: fs.readFileSync('./lib/program.js', 'utf8'), //Reads source code for Run(data) function from file
 	   credential: credential
 	};
 
@@ -72,9 +72,9 @@ function createTask(options) {
       obj.input.files.push({name:name, content:content});
 
       if(obj.input.argv.length === 5) {
-
-        stream.write(obj);
-
+		
+		stream.write(obj);
+		//fs.writeFileSync("data.json",JSON.stringify(obj))
         sent++;
 
         obj.input.argv = [];
